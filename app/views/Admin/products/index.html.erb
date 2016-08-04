@@ -20,15 +20,16 @@
     <% @products.each do |product| %>
       <tr>
         <td><%=  image_tag product.avatar.url(:thumb) %></td>
-        <td><button type="button" class: "btn btn-info"><%= product.name %></td>
-        <td><button type="button" class: "btn btn-info"><%= product.price %></td>
-        <td><button type="button" class: "btn btn-info"><%= product.quantity %></td>
-        <td><button type="button" class: "btn btn-info"><%= product.description %></td>
-        <td><button type="button" class: "btn btn-info"><%= product.category.try(:name) %></td>
-        <td><button type="button" class: "btn btn-info"><%= product.brand.try(:name) %></td>
+        <td><%= product.name %></td>
+        <td>%= product.price %></td>
+        <td><%= product.quantity %></td>
+        <td><%= product.description %></td>
+        <td>
+        <%= product.category.try(:name) %></td>
+        <td><%= product.brand.try(:name) %></td>
         <td> link_to fa_icon("eye", text:'Show'), admin_product_path(product) %></td>
-        <td><button type="button" class: "btn btn-secondary"><%= link_to 'Edit', edit_admin_product_path(product) %></td>
-        <td><button type="button" class: "btn btn-danger"><%= link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to fa_icon("pencil", text: 'Edit'), edit_admin_product_path(product) %></td> 
+        <td><%= link_to fa_icon("trash", text: 'Destroy'), admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
