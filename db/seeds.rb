@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+brand = ["poodle","party","german landscaping", "australian dodads", " Kortie", "animation", "great dane", "doberman", "redbull", "rot", "jackel", "chiana", "forever", "pokemon"]
+
+  brand.each do |brand|
+    Brand.create(name: brand)
+    end
+
+    puts "It did something"
