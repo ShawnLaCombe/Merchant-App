@@ -13,10 +13,10 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td> <button type="button" class: "btn btn-info"><%= admin_category_path(category) %></button></td>
-        <td><button type="button" class: "btn btn-primary"><%= link_to 'Show', admin_category_path(category) %></button></td>
-        <td><button type="button" class: "btn btn-secondary"><%= link_to 'Edit', edit_admin_category_path(category) %></button></td>
-        <td><button type="button" class: "btn btn-danger"><%= link_to 'Destroy', admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
+        <td> <%= category.name %></td>
+        <td><%= link_to fa_icon("eye", text:'Show'), admin_category_path(category) %></button></td>
+        <td><%= link_to fa_icon("pencil", text:'Edit'), edit_admin_category_path(category) %></button></td>
+        <td><%= link_to fa_icon("trash", text:'Destroy'), admin_category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Category', new_admin_category_path %>
+<%= link_to 'New Category', new_admin_category_path, class: "btn btn-sm btn-success" %>
