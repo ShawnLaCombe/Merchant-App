@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  get '/shop' => 'storefront#index'
+  get '/about' => 'storefront#about'
+
   devise_for :users
   namespace :admin do
     resources :products
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
 
   end
 
-  root 'admin/products#index'
+  root 'storefront#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
