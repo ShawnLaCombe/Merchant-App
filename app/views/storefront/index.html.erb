@@ -1,6 +1,12 @@
 <h1>Welcome to Store-Tastic!</h1>
 <p> We sell everything your heart desires. If you have the money we have the product!</p>
 
+<% if params[:cat_id] %>
+  <h3>All <%= @category.name.capitalize %></h3> 
+  <% else %>
+  <h3>All Products</h3>
+  <% end %>
+
 <div class= "container-fluid">
   <div class = "row">
 
