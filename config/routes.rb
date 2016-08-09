@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  
+
   get '/shop' => 'storefront#index'
   get '/about' => 'storefront#about'
 
+  resource :cart, only: [:edit, :update, :destroy]
+  resources :line_items, only: [:create]
   devise_for :users
   namespace :admin do
     resources :products

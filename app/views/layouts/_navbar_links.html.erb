@@ -48,11 +48,16 @@
       <!-- Login and Out links -->
       <!-- *********************** -->
         <% if user_signed_in? %>
+        <!-- ********************* -->
+        <!-- Edit Cart             -->
+        <!-- ********************* -->
+          <li><%= "fa fa-shopping-cart"  link_to('Edit', edit_cart_path) %></li>
           <li><%= link_to('Edit Account', edit_user_registration_path ) %></li>
           <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
           <% else %>
           <li><%= link_to('Login', new_user_session_path) %></li>
           <li><%= link_to('Sign Up', new_user_registration_path ) %></li>
+
         <% end %>
 
       </ul>
