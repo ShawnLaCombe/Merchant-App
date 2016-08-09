@@ -4,13 +4,13 @@ class StorefrontController < ApplicationController
       @products = Product.search_by_name_or_description(params[:search])
       if @products.empty?
         flash.now[:notice]= "Sorry, we're out of \"#{params[:search]}\", product for now"
-        @products = Product.all
+        @products = Product.paginate(:page => params[:page], per_page: 10)
       end
     elsif params[:cat_id]
       @category=Category.find(params[:cat_id])
       @products = Product.where(category_id: params[:cat_id])
     else
-      @products = Product.all
+      @products = Product.paginate(:page => params[:page], per_page: 10)
     end
   end
 

@@ -28,7 +28,7 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'paperclip', '~> 4.3'
 gem 'devise'
-
+gem 'will_paginate', '~> 3.1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
