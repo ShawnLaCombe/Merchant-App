@@ -13,5 +13,13 @@ class LineItemsController < ApplicationController
       redirect_to :back
     end
   end
+  def destroy
+    @line_item = LineItem.find(params[:id])
+
+    if @line_item.present?
+      @line_item.destroy
+    end
+  end
+
 
 end

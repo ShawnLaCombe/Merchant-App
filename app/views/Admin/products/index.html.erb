@@ -34,7 +34,7 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%=  image_tag product.avatar.url(:thumb) %></td>
+        <td><%= image_tag product.avatar.url(:thumb) %></td>
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.quantity %></td>
