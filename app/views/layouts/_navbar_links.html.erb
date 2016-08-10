@@ -38,20 +38,20 @@
 
         </li>
       </ul>
- 
+
 
       <!-- *********************** -->
       <!-- Right Navbar -->
       <!-- *********************** -->
       <ul class="nav navbar-nav navbar-right">
-      <!-- ********************* -->
-      <!-- Edit Cart             -->
-      <!-- ********************* -->
-        <li><%= link_to('Edit', edit_cart_path) %></li>
       <!-- *********************** -->
       <!-- Login and Out links -->
       <!-- *********************** -->
         <% if user_signed_in? %>
+        <!-- ********************* -->
+        <!-- Edit Cart             -->
+        <!-- ********************* -->
+          <li><%= link_to('Edit', edit_cart_path) %></li>
           <li><%= link_to('Edit Account', edit_user_registration_path ) %></li>
           <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
           <% else %>
