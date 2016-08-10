@@ -47,11 +47,12 @@
       <!-- *********************** -->
       <!-- Login and Out links -->
       <!-- *********************** -->
+       <li><%= link_to fa_icon("shopping-cart", text:'Cart'), edit_cart_path %></li>
         <% if user_signed_in? %>
         <!-- ********************* -->
         <!-- Edit Cart             -->
         <!-- ********************* -->
-          <li><%= link_to('Edit', edit_cart_path) %></li>
+         
           <li><%= link_to('Edit Account', edit_user_registration_path ) %></li>
           <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
           <% else %>
