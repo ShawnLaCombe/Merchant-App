@@ -1,4 +1,12 @@
 class Order < ActiveRecord::Base
   belongs_to :user
-  has_many :line_items, dependant: :destroy
+  has_many :line_items, dependent: :destroy
+
+  validates :name, :address, :pay_type, :user_id, presence: true
+  
+  PAYMENT_TYPES = ["Check", "Credit Card", "COD", "Cash", "Bitcoin", "Paypal"]
+  validates :pay_type, inclusion: PAYMENT_TYPES
+
+
+
 end
